@@ -4,183 +4,592 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3d68" />
+
   <title>سياسة الخصوصية — تطبيق كلية الجزيرة التقنية</title>
+
   <style>
-    body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px 16px; line-height: 1.8; color: #1f2937; background: #ffffff; }
-    h1 { font-size: 1.6em; color: #1d4ed8; }
-    h2 { font-size: 1.2em; color: #1d4ed8; margin-top: 1.6em; }
-    .meta { color: #6b7280; font-size: 0.95em; }
-    .lang-switch { margin: 16px 0; }
-    .lang-switch a { padding: 6px 14px; border: 1px solid #1d4ed8; border-radius: 6px; text-decoration: none; color: #1d4ed8; }
-    .en-section { direction: ltr; text-align: left; }
-    hr { border: none; border-top: 1px solid #e5e7eb; margin: 32px 0; }
+    :root {
+      --primary: #0f3d68;
+      --primary-light: #eaf2f9;
+      --accent: #1d6fa5;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --background: #f5f7fa;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.9;
+    }
+
+    /* Header */
+    .site-header {
+      background: linear-gradient(135deg, #0f3d68 0%, #155b8f 100%);
+      color: #ffffff;
+      padding: 48px 20px 56px;
+      text-align: center;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .college-mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: #ffffff;
+    }
+
+    .header-subtitle {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.98rem;
+    }
+
+    /* Main */
+    .page-container {
+      max-width: 900px;
+      margin: -28px auto 60px;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .policy-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow:
+        0 10px 30px rgba(15, 61, 104, 0.07),
+        0 2px 8px rgba(15, 61, 104, 0.04);
+      overflow: hidden;
+    }
+
+    .policy-content {
+      padding: 42px 46px;
+    }
+
+    /* Intro */
+    .policy-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .effective-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .policy-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .intro {
+      margin: 0 0 34px;
+      padding: 20px 22px;
+      background: #f8fafc;
+      border: 1px solid #edf0f3;
+      border-right: 4px solid var(--primary);
+      border-radius: 10px;
+      color: #374151;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 38px;
+      scroll-margin-top: 24px;
+    }
+
+    section:first-of-type {
+      margin-top: 0;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      color: var(--primary);
+      font-size: 1.18rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    h2::before {
+      content: "";
+      width: 5px;
+      height: 25px;
+      flex: 0 0 5px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin: 0;
+      padding-right: 24px;
+    }
+
+    li {
+      margin: 10px 0;
+      padding-right: 5px;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    strong {
+      color: #263f56;
+    }
+
+    /* Language switch */
+    .lang-switch {
+      margin: 40px 0 0;
+      padding: 18px 20px;
+      background: var(--primary-light);
+      border: 1px solid #d9e7f2;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .lang-switch a {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+
+    /* Divider */
+    .language-divider {
+      margin: 48px 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    /* English section */
+    .en-section {
+      direction: ltr;
+      text-align: left;
+    }
+
+    .en-section .intro {
+      border-right: 1px solid #edf0f3;
+      border-left: 4px solid var(--primary);
+    }
+
+    .en-section h2 {
+      flex-direction: row;
+    }
+
+    .en-section ul {
+      padding-right: 0;
+      padding-left: 24px;
+    }
+
+    .en-section li {
+      padding-right: 0;
+      padding-left: 5px;
+    }
+
+    /* Footer */
+    .site-footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-line {
+      width: 40px;
+      height: 3px;
+      margin: 0 auto 14px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 36px 18px 48px;
+      }
+
+      .college-mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        font-size: 23px;
+      }
+
+      .page-container {
+        margin-top: -22px;
+        padding: 0 12px;
+      }
+
+      .policy-card {
+        border-radius: 14px;
+      }
+
+      .policy-content {
+        padding: 28px 20px;
+      }
+
+      .policy-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .intro {
+        padding: 17px 16px;
+      }
+
+      h2 {
+        font-size: 1.08rem;
+      }
+
+      ul {
+        padding-right: 20px;
+      }
+
+      .en-section ul {
+        padding-left: 20px;
+      }
+
+      section {
+        margin-top: 32px;
+      }
+
+      .language-divider {
+        margin: 38px 0;
+      }
+    }
   </style>
+
 </head>
+
 <body>
 
+  <!-- Header -->
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="college-mark">GCT</div>
+
+```
   <h1>سياسة الخصوصية — تطبيق كلية الجزيرة التقنية</h1>
-  <p class="meta">تاريخ السريان: 10 سبتمبر 2026</p>
 
-  <p>
-    تطبيق <strong>كلية الجزيرة التقنية</strong> (يُشار إليه فيما يلي بـ"التطبيق") هو تطبيق رسمي تابع
-    لـ<strong>كلية الجزيرة التقنية</strong>، ويعمل على نظام أندرويد ويُوزَّع عبر متجر Google Play.
-    توضّح هذه السياسة أنواع المعلومات التي يتعامل معها التطبيق وكيفية استخدامها وحمايتها.
+  <p class="header-subtitle">
+    Al-Jazira Technical College
   </p>
+</div>
+```
 
-  <h2>1. المعلومات التي يتعامل معها التطبيق</h2>
-  <ul>
-    <li><strong>بيانات حساب المستخدم:</strong> يقوم المنتسبون (طلبة، أعضاء هيئة تدريس، موظفون) بتسجيل الدخول
-      باستخدام اسم المستخدم وكلمة المرور الصادرين من الكلية. قد تتضمن بيانات الحساب عنوان البريد الإلكتروني،
-      وتُخزَّن على خوادم الكلية (عبر خدمة Supabase) لأغراض التحقق من الهوية وتوفير الخدمات الإلكترونية.</li>
-    <li><strong>رموز الإشعارات (Push Tokens):</strong> عند تفعيل الإشعارات، يُستخدم خدمة Firebase Cloud Messaging
-      (من Google) لإرسال رمز جهاز فريد إلى خوادم الكلية بهدف توصيل إشعارات الأخبار والإعلانات الأكاديمية.</li>
-    <li><strong>محتوى المستخدم:</strong> الرسائل داخل المحادثات، والصور التي يختار المستخدم رفعها، والمحتوى
-      التفاعلي الآخر — تُخزَّن على خوادم الكلية وتُعرض فقط للمستخدمين المخوّلين.</li>
-    <li><strong>بيانات محلية على الجهاز:</strong> يحفظ التطبيق بعض الإعدادات (مثل اللغة المفضّلة وحالة تسجيل الدخول)
-      على الجهاز نفسه فقط.</li>
-    <li><strong>حالة الاتصال بالشبكة:</strong> يتحقق التطبيق من حالة الاتصال بالإنترنت لعرض المحتوى المناسب.</li>
-    <li>كما يُستخدم معرّف عشوائي مجهول للجهاز لتسجيل الإعجابات بالمقالات والصور، ولا يرتبط هذا المعرّف بأي بيانات شخصية.</li>
-  </ul>
+  </header>
 
-  <h2>2. كيفية استخدام المعلومات</h2>
-  <ul>
-    <li>التحقق من هوية المنتسبين وتقديم الخدمات الإلكترونية الخاصة بالكلية.</li>
-    <li>إرسال الإشعارات المتعلقة بالأخبار والإعلانات الأكاديمية للطلبة والموظفين.</li>
-    <li>تشغيل ميزات المحادثات ومشاركة الملفات بين المستخدمين المخوّلين.</li>
-  </ul>
+  <!-- Main content -->
 
-  <h2>3. مشاركة البيانات مع أطراف ثالثة</h2>
-  <p>
-    لا يبيع التطبيق أي بيانات ولا يشاركها لأغراض إعلانية أو تسويقية. تقتصر الخدمات الخارجية المستخدمة على:
-  </p>
-  <ul>
-    <li><strong>Supabase:</strong> استضافة قواعد بيانات وخدمات المصادقة الخاصة بالكلية.</li>
-    <li><strong>Google (Firebase Cloud Messaging):</strong> توصيل الإشعارات الفورية.</li>
-  </ul>
-
-  <h2>4. ما لا يفعله التطبيق</h2>
-  <ul>
-    <li>لا يجمع بيانات الموقع الجغرافي.</li>
-    <li>لا يحتوي على إعلانات أو أدوات تتبّع أو تحليلات خارجية.</li>
-    <li>لا يشارك البيانات مع جهات إعلانية أو وسطاء بيانات.</li>
-  </ul>
-
-  <h2>5. حماية البيانات</h2>
-  <p>
-    تُنقل البيانات عبر اتصال مشفَّر (HTTPS)، وتكون متاحة فقط للمستخدمين المخوّلين داخل نظام الكلية،
-    وتخضع لإجراءات أمان الكلية التقنية والإدارية.
-  </p>
-
-  <h2>6. خصوصية الأطفال</h2>
-  <p>
-    التطبيق موجَّه لمنتسبي الكلية ولا يجمع بشكل متعمَّد أي معلومات من الأطفال دون سن 13 عاماً.
-  </p>
-
-  <h2>7. الاحتفاظ بالبيانات وحذفها</h2>
-  <p>
-    تُحفظ بيانات الحساب طوال فترة انتساب المستخدم للكلية. يمكن للمستخدم طلب حذف حسابه أو بياناته
-    عبر التواصل على البريد الإلكتروني أدناه.
-  </p>
-
-  <h2>8. التعديلات على هذه السياسة</h2>
-  <p>
-    قد يتم تحديث هذه السياسة من وقت لآخر، وسيتم نشر أي تحديثات على هذه الصفحة مع تحديث تاريخ السريان.
-  </p>
-
-  <h2>9. التواصل</h2>
-  <p>
-    لأي استفسار حول هذه السياسة، يرجى التواصل معنا على:
-    <a href="mailto:info@geziracollege.education">info@geziracollege.education</a>
-  </p>
-
-  <div class="lang-switch"><a href="#english">English version below — النسخة الإنجليزية أدناه</a></div>
-
-  <hr />
-
-  <div class="en-section">
-    <h1>Privacy Policy — Al-Jazira Technical College App</h1>
-    <p class="meta">Effective date: September 10, 2026</p>
+  <main class="page-container">
+    <div class="policy-card">
+      <div class="policy-content">
 
 ```
-<p>
-  The <strong>Al-Jazira Technical College</strong> app (the "App") is the official Android application of
-  <strong>Al-Jazira Technical College</strong> (كلية الجزيرة التقنية), distributed on Google Play.
-  This policy explains what information the App handles and how it is used and protected.
-</p>
+    <!-- Arabic -->
+    <div class="policy-meta">
+      <span class="policy-label">سياسة الخصوصية</span>
+      <span class="effective-date">تاريخ السريان: 10 سبتمبر 2026</span>
+    </div>
 
-<h2>1. Information the App handles</h2>
-<ul>
-  <li><strong>Account information:</strong> College members (students, faculty, staff) sign in with a
-    username and password issued by the College. Account data (which may include an email address)
-    is stored on the College's servers (hosted via Supabase) for identity verification and to
-    provide college services.</li>
-  <li><strong>Push notification tokens:</strong> When notifications are enabled, the App uses
-    Google's Firebase Cloud Messaging service to deliver a unique device token to the College's
-    servers in order to send news and academic announcements.</li>
-  <li><strong>User content:</strong> Chat messages, images the user chooses to upload, and other
-    interactive content are stored on the College's servers and shown only to authorized users.</li>
-  <li><strong>On-device data:</strong> The App stores some settings locally on the device only
-    (such as the preferred language and sign-in state).</li>
-  <li><strong>Network state:</strong> The App checks internet connectivity to display content appropriately.</li>
-  <li>The App also uses an anonymous, randomly generated device identifier to record likes on articles and photos; this identifier is not linked to any personal information.</li>
-</ul>
+    <p class="intro">
+      تطبيق <strong>كلية الجزيرة التقنية</strong> (يُشار إليه فيما يلي بـ"التطبيق") هو تطبيق رسمي تابع
+      لـ<strong>كلية الجزيرة التقنية</strong>، ويعمل على نظام أندرويد ويُوزَّع عبر متجر Google Play.
+      توضّح هذه السياسة أنواع المعلومات التي يتعامل معها التطبيق وكيفية استخدامها وحمايتها.
+    </p>
 
-<h2>2. How information is used</h2>
-<ul>
-  <li>Verifying the identity of College members and providing college e-services.</li>
-  <li>Sending notifications about news and academic announcements.</li>
-  <li>Operating chat and file-sharing features between authorized users.</li>
-</ul>
+    <section>
+      <h2>1. المعلومات التي يتعامل معها التطبيق</h2>
+      <ul>
+        <li><strong>بيانات حساب المستخدم:</strong> يقوم المنتسبون (طلبة، أعضاء هيئة تدريس، موظفون) بتسجيل الدخول
+          باستخدام اسم المستخدم وكلمة المرور الصادرين من الكلية. قد تتضمن بيانات الحساب عنوان البريد الإلكتروني،
+          وتُخزَّن على خوادم الكلية (عبر خدمة Supabase) لأغراض التحقق من الهوية وتوفير الخدمات الإلكترونية.</li>
 
-<h2>3. Third-party services</h2>
-<p>
-  The App does not sell or share data for advertising or marketing purposes. The only external
-  services used are:
-</p>
-<ul>
-  <li><strong>Supabase:</strong> hosting the College's database and authentication services.</li>
-  <li><strong>Google (Firebase Cloud Messaging):</strong> delivering push notifications.</li>
-</ul>
+        <li><strong>رموز الإشعارات (Push Tokens):</strong> عند تفعيل الإشعارات، يُستخدم خدمة Firebase Cloud Messaging
+          (من Google) لإرسال رمز جهاز فريد إلى خوادم الكلية بهدف توصيل إشعارات الأخبار والإعلانات الأكاديمية.</li>
 
-<h2>4. What the App does not do</h2>
-<ul>
-  <li>It does not collect location data.</li>
-  <li>It contains no advertising, tracking, or third-party analytics.</li>
-  <li>It does not share data with advertisers or data brokers.</li>
-</ul>
+        <li><strong>محتوى المستخدم:</strong> الرسائل داخل المحادثات، والصور التي يختار المستخدم رفعها، والمحتوى
+          التفاعلي الآخر — تُخزَّن على خوادم الكلية وتُعرض فقط للمستخدمين المخوّلين.</li>
 
-<h2>5. Data security</h2>
-<p>
-  Data is transmitted over encrypted connections (HTTPS), is available only to authorized users
-  within the College's system, and is subject to the College's technical and administrative
-  security measures.
-</p>
+        <li><strong>بيانات محلية على الجهاز:</strong> يحفظ التطبيق بعض الإعدادات (مثل اللغة المفضّلة وحالة تسجيل الدخول)
+          على الجهاز نفسه فقط.</li>
 
-<h2>6. Children's privacy</h2>
-<p>
-  The App is intended for College members and does not knowingly collect information from
-  children under 13.
-</p>
+        <li><strong>حالة الاتصال بالشبكة:</strong> يتحقق التطبيق من حالة الاتصال بالإنترنت لعرض المحتوى المناسب.</li>
 
-<h2>7. Data retention and deletion</h2>
-<p>
-  Account data is retained for the duration of the user's affiliation with the College. Users may
-  request deletion of their account or data by contacting the email below.
-</p>
+        <li>كما يُستخدم معرّف عشوائي مجهول للجهاز لتسجيل الإعجابات بالمقالات والصور، ولا يرتبط هذا المعرّف بأي بيانات شخصية.</li>
+      </ul>
+    </section>
 
-<h2>8. Changes to this policy</h2>
-<p>
-  This policy may be updated from time to time. Updates will be posted on this page with a new
-  effective date.
-</p>
+    <section>
+      <h2>2. كيفية استخدام المعلومات</h2>
+      <ul>
+        <li>التحقق من هوية المنتسبين وتقديم الخدمات الإلكترونية الخاصة بالكلية.</li>
+        <li>إرسال الإشعارات المتعلقة بالأخبار والإعلانات الأكاديمية للطلبة والموظفين.</li>
+        <li>تشغيل ميزات المحادثات ومشاركة الملفات بين المستخدمين المخوّلين.</li>
+      </ul>
+    </section>
 
-<h2>9. Contact us</h2>
-<p>
-  Questions about this policy: <a href="mailto:info@geziracollege.education">info@geziracollege.education</a>
-</p>
-```
+    <section>
+      <h2>3. مشاركة البيانات مع أطراف ثالثة</h2>
+      <p>
+        لا يبيع التطبيق أي بيانات ولا يشاركها لأغراض إعلانية أو تسويقية. تقتصر الخدمات الخارجية المستخدمة على:
+      </p>
+
+      <ul>
+        <li><strong>Supabase:</strong> استضافة قواعد بيانات وخدمات المصادقة الخاصة بالكلية.</li>
+        <li><strong>Google (Firebase Cloud Messaging):</strong> توصيل الإشعارات الفورية.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. ما لا يفعله التطبيق</h2>
+      <ul>
+        <li>لا يجمع بيانات الموقع الجغرافي.</li>
+        <li>لا يحتوي على إعلانات أو أدوات تتبّع أو تحليلات خارجية.</li>
+        <li>لا يشارك البيانات مع جهات إعلانية أو وسطاء بيانات.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. حماية البيانات</h2>
+      <p>
+        تُنقل البيانات عبر اتصال مشفَّر (HTTPS)، وتكون متاحة فقط للمستخدمين المخوّلين داخل نظام الكلية،
+        وتخضع لإجراءات أمان الكلية التقنية والإدارية.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. خصوصية الأطفال</h2>
+      <p>
+        التطبيق موجَّه لمنتسبي الكلية ولا يجمع بشكل متعمَّد أي معلومات من الأطفال دون سن 13 عاماً.
+      </p>
+    </section>
+
+    <section>
+      <h2>7. الاحتفاظ بالبيانات وحذفها</h2>
+      <p>
+        تُحفظ بيانات الحساب طوال فترة انتساب المستخدم للكلية. يمكن للمستخدم طلب حذف حسابه أو بياناته
+        عبر التواصل على البريد الإلكتروني أدناه.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. التعديلات على هذه السياسة</h2>
+      <p>
+        قد يتم تحديث هذه السياسة من وقت لآخر، وسيتم نشر أي تحديثات على هذه الصفحة مع تحديث تاريخ السريان.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. التواصل</h2>
+      <p>
+        لأي استفسار حول هذه السياسة، يرجى التواصل معنا على:
+        <a href="mailto:info@geziracollege.education">info@geziracollege.education</a>
+      </p>
+    </section>
+
+    <div class="lang-switch">
+      <a href="#english">
+        English version below — النسخة الإنجليزية أدناه
+      </a>
+    </div>
+
+    <hr class="language-divider" id="english" />
+
+    <!-- English -->
+    <div class="en-section">
+
+      <div class="policy-meta">
+        <span class="policy-label">Privacy Policy</span>
+        <span class="effective-date">Effective date: September 10, 2026</span>
+      </div>
+
+      <p class="intro">
+        The <strong>Al-Jazira Technical College</strong> app (the "App") is the official Android application of
+        <strong>Al-Jazira Technical College</strong> (كلية الجزيرة التقنية), distributed on Google Play.
+        This policy explains what information the App handles and how it is used and protected.
+      </p>
+
+      <section>
+        <h2>1. Information the App handles</h2>
+        <ul>
+          <li><strong>Account information:</strong> College members (students, faculty, staff) sign in with a
+            username and password issued by the College. Account data (which may include an email address)
+            is stored on the College's servers (hosted via Supabase) for identity verification and to
+            provide college services.</li>
+
+          <li><strong>Push notification tokens:</strong> When notifications are enabled, the App uses
+            Google's Firebase Cloud Messaging service to deliver a unique device token to the College's
+            servers in order to send news and academic announcements.</li>
+
+          <li><strong>User content:</strong> Chat messages, images the user chooses to upload, and other
+            interactive content are stored on the College's servers and shown only to authorized users.</li>
+
+          <li><strong>On-device data:</strong> The App stores some settings locally on the device only
+            (such as the preferred language and sign-in state).</li>
+
+          <li><strong>Network state:</strong> The App checks internet connectivity to display content appropriately.</li>
+
+          <li>The App also uses an anonymous, randomly generated device identifier to record likes on articles and photos; this identifier is not linked to any personal information.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. How information is used</h2>
+        <ul>
+          <li>Verifying the identity of College members and providing college e-services.</li>
+          <li>Sending notifications about news and academic announcements.</li>
+          <li>Operating chat and file-sharing features between authorized users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Third-party services</h2>
+        <p>
+          The App does not sell or share data for advertising or marketing purposes. The only external
+          services used are:
+        </p>
+
+        <ul>
+          <li><strong>Supabase:</strong> hosting the College's database and authentication services.</li>
+          <li><strong>Google (Firebase Cloud Messaging):</strong> delivering push notifications.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. What the App does not do</h2>
+        <ul>
+          <li>It does not collect location data.</li>
+          <li>It contains no advertising, tracking, or third-party analytics.</li>
+          <li>It does not share data with advertisers or data brokers.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Data security</h2>
+        <p>
+          Data is transmitted over encrypted connections (HTTPS), is available only to authorized users
+          within the College's system, and is subject to the College's technical and administrative
+          security measures.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Children's privacy</h2>
+        <p>
+          The App is intended for College members and does not knowingly collect information from
+          children under 13.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Data retention and deletion</h2>
+        <p>
+          Account data is retained for the duration of the user's affiliation with the College. Users may
+          request deletion of their account or data by contacting the email below.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Changes to this policy</h2>
+        <p>
+          This policy may be updated from time to time. Updates will be posted on this page with a new
+          effective date.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Contact us</h2>
+        <p>
+          Questions about this policy:
+          <a href="mailto:info@geziracollege.education">info@geziracollege.education</a>
+        </p>
+      </section>
+
+    </div>
 
   </div>
+</div>
+```
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-line"></div>
+    كلية الجزيرة التقنية
+  </footer>
 
 </body>
 </html>
