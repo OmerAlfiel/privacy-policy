@@ -29,8 +29,8 @@
   <h2>1. المعلومات التي يتعامل معها التطبيق</h2>
   <ul>
     <li><strong>بيانات حساب المستخدم:</strong> يقوم المنتسبون (طلبة، أعضاء هيئة تدريس، موظفون) بتسجيل الدخول
-      باستخدام اسم المستخدم وكلمة المرور الصادرين من الكلية. تُخزَّن بيانات الحساب على خوادم الكلية
-      (عبر خدمة Supabase) لأغراض التحقق من الهوية وتوفير الخدمات الإلكترونية.</li>
+      باستخدام اسم المستخدم وكلمة المرور الصادرين من الكلية. قد تتضمن بيانات الحساب عنوان البريد الإلكتروني،
+      وتُخزَّن على خوادم الكلية (عبر خدمة Supabase) لأغراض التحقق من الهوية وتوفير الخدمات الإلكترونية.</li>
     <li><strong>رموز الإشعارات (Push Tokens):</strong> عند تفعيل الإشعارات، يُستخدم خدمة Firebase Cloud Messaging
       (من Google) لإرسال رمز جهاز فريد إلى خوادم الكلية بهدف توصيل إشعارات الأخبار والإعلانات الأكاديمية.</li>
     <li><strong>محتوى المستخدم:</strong> الرسائل داخل المحادثات، والصور التي يختار المستخدم رفعها، والمحتوى
@@ -108,8 +108,9 @@
     <h2>1. Information the App handles</h2>
     <ul>
       <li><strong>Account information:</strong> College members (students, faculty, staff) sign in with a
-        username and password issued by the College. Account data is stored on the College's servers
-        (hosted via Supabase) for identity verification and to provide college services.</li>
+        username and password issued by the College. Account data (which may include an email address)
+        is stored on the College's servers (hosted via Supabase) for identity verification and to
+        provide college services.</li>
       <li><strong>Push notification tokens:</strong> When notifications are enabled, the App uses
         Google's Firebase Cloud Messaging service to deliver a unique device token to the College's
         servers in order to send news and academic announcements.</li>
